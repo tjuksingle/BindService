@@ -84,9 +84,11 @@ Replace null with MyBinder. Then process step 2.
     @Override
     protected void onStop() {
         super.onStop();
-        MyService = null;
-        unbindService(ServiceConnection);]
-        //stopService(serviceIntent);
+        if(MyService != null){
+            MyService = null;
+            unbindService(ServiceConnection);
+            //stopService(serviceIntent);
+        }
     }
    
 7.Lastly，announce service in the manifest.
