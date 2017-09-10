@@ -18,7 +18,7 @@ Replace null with MyBinder. Then process step 2.
         MyService getService() {
             return MyService.this;
         }}
-3.Create a global variable MyBinder:
+3.Create a global variable MyBinder ( or simply replace null with new LocalBinder in step 1):
 
     private LocalBinder myBinder=new LocalBinder();
 
