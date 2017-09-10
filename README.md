@@ -78,20 +78,8 @@ Replace null with MyBinder. Then process step 2.
             }
         });
     }
-
-6.Don't forget release service when activity stop in case you forget press end button:
-    
-    @Override
-    protected void onStop() {
-        super.onStop();
-        if(MyService != null){
-            MyService = null;
-            unbindService(ServiceConnection);
-            //stopService(serviceIntent);
-        }
-    }
    
-7.Lastly，announce service in the manifest.
+6.Lastly，announce service in the manifest.
         
         <service
             android:name=".MyService"
