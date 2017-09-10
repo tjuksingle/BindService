@@ -2,9 +2,9 @@
 A simple case which connect service with bind method.
 Those first learner may need to view the code.
 
-Step
+# Step
 
-1.Create a new Service named Myservice which extends Service. press ALT+ENTER (Windows) add following code:
+1.Create a new Service named Myservice which extends Service. press ALT+ENTER (Windows) to add following code:
     
     @Override
     public IBinder onBind(Intent intent) {
