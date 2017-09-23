@@ -10,7 +10,13 @@ Those first learner may need to view the code.
     public IBinder onBind(Intent intent) {
         return null;}
  
-Replace null with MyBinder. Then process step 2. 
+Replace null with myBinder like:
+
+    @Override
+    public IBinder onBind(Intent intent) {
+        return myBinder;}
+        
+. Then process step 2. 
 
 2.Create a inner class named LocalBinder which extends Binder (not IBinder). Create a public method named getService:
 
@@ -18,9 +24,15 @@ Replace null with MyBinder. Then process step 2.
         MyService getService() {
             return MyService.this;
         }}
-3.Create a global variable MyBinder ( or simply replace null with new LocalBinder in step 1):
+3.Create a global variable MyBinder:
 
     private LocalBinder myBinder=new LocalBinder();
+    
+ or simply replace null with new LocalBinder in step 1, like:
+    @Override
+    public IBinder onBind(Intent intent) {
+        return myBinder;}
+,then you can ignore this step.
 
 4.So far, We have done with the basic setting with the Service. At Activity, create those global variable:
     
